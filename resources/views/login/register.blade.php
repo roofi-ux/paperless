@@ -1,7 +1,7 @@
 @extends('_layout_login', ['title' => 'Register Account'])
 @section('contents')
 
-<p class="text-center" style="font-size: 50px;font-weight: 800;padding-bottom: 20px;">Register</p>
+<p class="text-center" style="font-size: 50px;font-weight: 800;line-height:1;">REGISTER Account</p>
     <form action="{{ route('register.store') }}" method="post" autocomplete="off">
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">

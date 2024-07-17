@@ -21,18 +21,14 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
     rel="stylesheet"
     />
-    <style>
-        .col{
-            padding-top:100px;
-        }
-    </style>
+ 
 
 </head>
 <body>  
 <div class="container">
   <div class="row">
     <div class="col"></div>
-    <div class="col">  
+    <div class="col" style=" padding-top:100px;">  
       <!-- Pills navs -->
       
       <!-- Pills content -->
