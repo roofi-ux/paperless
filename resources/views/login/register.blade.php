@@ -2,7 +2,8 @@
 @section('contents')
 
 <p class="text-center" style="font-size: 50px;font-weight: 800;line-height:1;padding-bottom:30px;">SIGN UP</p>
-    <form action="{{ route('register.store') }}" method="post" autocomplete="off">
+    <form action="{{ route('register.store') }}" method="POST" autocomplete="off">
+      {{csrf_field()}}
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">
           <div class="col">
@@ -40,7 +41,7 @@
         {{-- </div> --}}
       
         <!-- Submit button -->
-        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
       
         <!-- Register buttons -->
         {{-- <div class="text-center">
