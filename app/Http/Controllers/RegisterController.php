@@ -18,9 +18,9 @@ class RegisterController extends Controller
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
-        $input['status'] = 'operator';
+        $input['status'] = 'user';
 
-        $max = DB::table('users')->max('id') + 1;
+        $max = DB::table('users')->max('id_user') + 1;
         DB::statement("ALTER TABLE users AUTO_INCREMENT =  $max");
 
         User::create($input);
@@ -28,19 +28,19 @@ class RegisterController extends Controller
         return redirect()
             // To the route named `login`
             ->route('auth.login')
-            ->with($request->only('namapendek', 'password'));
+            ->with($request->only('email', 'password'));
     }
 
     public function gantipasswd(Request $request)
     {
 
-        $userData = User::where('namapendek', $request->namapendek)->first();
+        $userData = User::where('email', $request->email)->first();
         $userData->update([
             'password' => bcrypt($request->passwordbaru)
         ]);
 
         return redirect()
             ->route('auth.login')
-            ->with($request->only('namapendek', 'password'));
+            ->with($request->only('email', 'password'));
     }
 }

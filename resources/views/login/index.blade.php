@@ -1,20 +1,20 @@
 @extends('_layout_login', ['title' => 'LOGIN'])
 @section('contents')
 
-<form>
+<form action="{{ route('auth.check') }}" method="POST" class="login">
             
       
   <p class="text-center" style="font-size: 50px;font-weight: 800;padding-bottom: 20px;">LOGIN</p>
 
   <!-- Email input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="email" id="loginName" class="form-control" />
+    <input type="email" name="email" id="loginName" class="form-control" />
     <label class="form-label" for="loginName">Email or username</label>
   </div>
 
   <!-- Password input -->
   <div data-mdb-input-init class="form-outline mb-4">
-    <input type="password" id="loginPassword" class="form-control" />
+    <input type="password" name="password" id="loginPassword" class="form-control" />
     <label class="form-label" for="loginPassword">Password</label>
   </div>
 

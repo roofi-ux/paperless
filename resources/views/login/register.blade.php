@@ -1,19 +1,19 @@
-@extends('_layout_login', ['title' => 'Register Account'])
+@extends('_layout_login', ['title' => 'SIGN UP Account'])
 @section('contents')
 
-<p class="text-center" style="font-size: 50px;font-weight: 800;line-height:1;">REGISTER Account</p>
+<p class="text-center" style="font-size: 50px;font-weight: 800;line-height:1;padding-bottom:30px;">SIGN UP</p>
     <form action="{{ route('register.store') }}" method="post" autocomplete="off">
         <!-- 2 column grid layout with text inputs for the first and last names -->
         <div class="row mb-4">
           <div class="col">
             <div data-mdb-input-init class="form-outline">
-              <input type="text" id="form3Example1" class="form-control" />
+              <input type="text" id="form3Example1" name="firstName" class="form-control" />
               <label class="form-label" for="form3Example1">First name</label>
             </div>
           </div>
           <div class="col">
             <div data-mdb-input-init class="form-outline">
-              <input type="text" id="form3Example2" class="form-control" />
+              <input type="text" id="form3Example2" name="lastName" class="form-control" />
               <label class="form-label" for="form3Example2">Last name</label>
             </div>
           </div>
@@ -21,13 +21,13 @@
       
         <!-- Email input -->
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form3Example3" class="form-control" />
+          <input type="email" id="form3Example3" name="email" class="form-control" />
           <label class="form-label" for="form3Example3">Email address</label>
         </div>
       
         <!-- Password input -->
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="password" id="form3Example4" class="form-control" />
+          <input type="password" id="form3Example4" name="password" class="form-control" />
           <label class="form-label" for="form3Example4">Password</label>
         </div>
       
