@@ -32,7 +32,7 @@ Route::name('gantipass.')->group(function () {
 
 
 #Route User Role
-Route::middleware(['UserRole'])->group(function () {
+Route::middleware(['userRole'])->group(function () {
     Route::prefix('user')->name('user.')->group(function () {
 
         Route::get('/user',  [DashboardUserController::class, 'index'])->name('dashboard.index');
@@ -43,7 +43,7 @@ Route::middleware(['UserRole'])->group(function () {
 });
 Route::post('/store', [LaporanController::class, 'store'])->name('store');
 // Route admin
-Route::middleware(['AdminRole'])->group(function () {
+Route::middleware(['adminRole'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
