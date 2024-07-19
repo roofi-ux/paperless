@@ -20,8 +20,8 @@ class RegisterController extends Controller
         $input['password'] = bcrypt($input['password']);
         $input['status'] = 'user';
 
-        $max = DB::table('users')->max('id_user') + 1;
-        DB::statement("ALTER TABLE users AUTO_INCREMENT =  $max");
+        // $max = DB::table('users')->max('id_user') + 1;
+        // DB::statement("ALTER TABLE users AUTO_INCREMENT =  $max");
 
         User::create($input);
 

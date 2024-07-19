@@ -16,7 +16,7 @@ class UserRole
     public function handle(Request $request, Closure $next): Response
     {
         if (!auth()->check()) return redirect()->route('auth.login');
-        if (auth()->user()->status != 'operator') abort(403);
+        if (auth()->user()->status != 'user') abort(403);
         return $next($request);
     }
 }

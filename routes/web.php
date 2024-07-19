@@ -30,6 +30,18 @@ Route::name('gantipass.')->group(function () {
     Route::post('/gantipasswd', [LoginController::class, 'gantipasswd'])->name('gantipasswd');
 });
 
+
+#Route User Role
+Route::middleware(['UserRole'])->group(function () {
+    Route::prefix('user')->name('user.')->group(function () {
+
+        Route::get('/user',  [DashboardUserController::class, 'index'])->name('dashboard.index');
+    });
+    // Route::post('/home', [DashboardUserController::class, 'store'])->name('home.store');
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::post('/laporan', [LaporanController::class, 'download'])->name('laporan.download');
+});
+Route::post('/store', [LaporanController::class, 'store'])->name('store');
 // Route admin
 Route::middleware(['AdminRole'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {

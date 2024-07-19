@@ -2,7 +2,7 @@
 @section('contents')
 
 <form action="{{ route('auth.check') }}" method="POST" class="login">
-            
+  {{csrf_field()}}       
       
   <p class="text-center" style="font-size: 50px;font-weight: 800;padding-bottom: 20px;">LOGIN</p>
 
@@ -37,7 +37,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
   <!-- Register buttons -->
   
