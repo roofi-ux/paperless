@@ -35,7 +35,7 @@ Route::name('gantipass.')->group(function () {
 Route::middleware(['userRole'])->group(function () {
     Route::prefix('user')->name('user.')->group(function () {
 
-        Route::get('/user',  [DashboardUserController::class, 'index'])->name('dashboard.index');
+        Route::get('/',  [DashboardUserController::class, 'index'])->name('dashboard.index');
     });
     // Route::post('/home', [DashboardUserController::class, 'store'])->name('home.store');
     Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');

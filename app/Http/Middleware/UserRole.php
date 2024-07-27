@@ -13,9 +13,9 @@ class UserRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ...$levels)
     {
-        if (!auth()->check()) return redirect()->route('auth.login');
+        if (!auth()->check()) return back()->with('error', 'Something went wrong!');
         if (auth()->user()->status != 'user') abort(403);
         return $next($request);
     }
